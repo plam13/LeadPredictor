@@ -16,6 +16,12 @@ Prospects = Leads * 100 / Prospect Response Rate%
 value(month i) = total * i / N   // i = 1..N, N = брой месеци между Campaign Start и Campaign End
 ```
 
+## Функционалност
+
+- Живо преизчисление на Prospects/Leads/Customers при промяна на Total Revenue, Avg. Order Value, датите на кампанията или двата slider-а (Lead/Prospect Response Rate)
+- Месечна bar графика с hover tooltip, показващ точните стойности за месеца
+- Смяна на език на етикетите (EN/BG/ES/DE) и на валутния символ, без презареждане на страницата
+
 ## Стартиране
 
 Отворете `index.html` директно в браузър — не изисква сървър или зависимости.
@@ -26,5 +32,5 @@ value(month i) = total * i / N   // i = 1..N, N = брой месеци межд
 - `css/styles.css` — стилове (тъмна тема)
 - `js/calculations.js` — чисти функции за изчисленията
 - `js/chart.js` — рендиране на месечната графика
-- `js/i18n.js` — превод на етикети (EN/BG) и валутни символи
+- `js/i18n.js` — превод на етикети (EN/BG/ES/DE) и валутни символи
 - `js/main.js` — свързва UI контролите с изчисленията

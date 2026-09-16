@@ -187,7 +187,14 @@ body {
 }
 
 .stat-icon {
-  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--panel);
+  font-size: 14px;
 }
 
 .stat-title {
@@ -350,5 +357,12 @@ input[type="range"]::-moz-range-thumb {
   }
   .content {
     grid-row: 3;
+  }
+  .chart-panel {
+    flex-direction: column;
+  }
+  .chart-axis {
+    flex-wrap: wrap;
+    gap: 6px 12px;
   }
 }
