@@ -64,21 +64,6 @@ const LeadPredictorI18n = (function () {
     GBP: '£',
   };
 
-  // Fixed, hardcoded rates relative to USD - used to auto-convert Revenue/AOV
-  // when the user switches currency.
-  const exchangeRatesFromUSD = {
-    USD: 1,
-    EUR: 0.92,
-    BGN: 1.8,
-    GBP: 0.79,
-  };
-
-  function convertAmount(amount, fromCode, toCode) {
-    const fromRate = exchangeRatesFromUSD[fromCode] || 1;
-    const toRate = exchangeRatesFromUSD[toCode] || 1;
-    return (amount / fromRate) * toRate;
-  }
-
   function applyLanguage(lang) {
     const dict = dictionaries[lang] || dictionaries.en;
     document.querySelectorAll('[data-i18n]').forEach((el) => {
@@ -94,5 +79,5 @@ const LeadPredictorI18n = (function () {
     });
   }
 
-  return { applyLanguage, applyCurrency, currencySymbols, convertAmount, exchangeRatesFromUSD };
+  return { applyLanguage, applyCurrency, currencySymbols };
 })();

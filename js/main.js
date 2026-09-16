@@ -63,21 +63,8 @@
     });
 
     const currencySelect = document.getElementById('currency-select');
-    let previousCurrency = currencySelect.value;
     currencySelect.addEventListener('change', () => {
-      const newCurrency = currencySelect.value;
-      ['total-revenue', 'avg-order-value'].forEach((id) => {
-        const input = document.getElementById(id);
-        const converted = LeadPredictorI18n.convertAmount(
-          parseFloat(input.value) || 0,
-          previousCurrency,
-          newCurrency
-        );
-        input.value = Math.round(converted);
-      });
-      previousCurrency = newCurrency;
-      LeadPredictorI18n.applyCurrency(newCurrency);
-      recalculate();
+      LeadPredictorI18n.applyCurrency(currencySelect.value);
     });
 
     LeadPredictorI18n.applyLanguage(languageSelect.value);
