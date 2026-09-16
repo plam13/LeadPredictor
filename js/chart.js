@@ -48,16 +48,6 @@ const LeadPredictorChart = (function () {
     const rows = document.createElement('div');
     rows.className = 'chart-rows';
 
-    const grid = document.createElement('div');
-    grid.className = 'chart-grid';
-    for (let value = axisStep; value <= maxValue; value += axisStep) {
-      const line = document.createElement('span');
-      line.className = 'chart-grid-line';
-      line.style.left = `${(value / maxValue) * 100}%`;
-      grid.appendChild(line);
-    }
-    rows.appendChild(grid);
-
     const tooltip = document.createElement('div');
     tooltip.className = 'chart-tooltip';
     tooltip.hidden = true;
