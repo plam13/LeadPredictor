@@ -286,6 +286,26 @@ body {
   padding: 16px;
 }
 
+.stat-card--prospects {
+  background: var(--bar-light);
+  border-color: var(--bar-light);
+}
+
+.stat-card--leads {
+  background: var(--bar-mid);
+  border-color: var(--bar-mid);
+}
+
+.stat-card--customers {
+  background: var(--bar-dark);
+  border-color: var(--bar-dark);
+  color: var(--bg);
+}
+
+.stat-card--customers .stat-percent {
+  color: rgba(13, 21, 38, 0.55);
+}
+
 .stat-card-header {
   display: flex;
   align-items: center;
@@ -301,7 +321,7 @@ body {
   height: 28px;
   border-radius: 6px;
   background: var(--panel);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .stat-title {
