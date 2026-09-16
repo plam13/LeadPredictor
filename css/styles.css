@@ -1,0 +1,135 @@
+:root {
+  --bg: #0d1526;
+  --panel: #1b2338;
+  --panel-border: #2c3752;
+  --text: #e7ebf3;
+  --text-muted: #8a93a8;
+  --accent: #ffffff;
+  --track: #3a4560;
+  --bar-light: #9aa3b8;
+  --bar-mid: #6b7794;
+  --bar-dark: #ffffff;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header {
+  grid-column: 1 / -1;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 2 / 4;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  align-self: start;
+}
+
+.content {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chart-panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.chart-container {
+  flex: 2;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sliders-panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.placeholder {
+  color: var(--text-muted);
+}
+
+@media (max-width: 800px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+  .sidebar,
+  .content {
+    grid-column: 1;
+  }
+  .sidebar {
+    grid-row: 2;
+  }
+  .content {
+    grid-row: 3;
+  }
+}
