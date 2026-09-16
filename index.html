@@ -22,7 +22,7 @@
 
   <aside class="sidebar" id="sidebar">
     <div class="field">
-      <label for="language-select">Language</label>
+      <label for="language-select" data-i18n="language">Language</label>
       <select id="language-select">
         <option value="en" selected>🇺🇸 English</option>
         <option value="bg">🇧🇬 Български</option>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="field">
-      <label for="currency-select">Currency</label>
+      <label for="currency-select" data-i18n="currency">Currency</label>
       <select id="currency-select">
         <option value="USD" data-symbol="$" selected>$ US Dollar</option>
         <option value="EUR" data-symbol="€">€ Euro</option>
@@ -42,17 +42,17 @@
     </div>
 
     <div class="field">
-      <label for="campaign-start">Campaign Start</label>
+      <label for="campaign-start" data-i18n="campaignStart">Campaign Start</label>
       <input type="date" id="campaign-start" value="2026-05-08">
     </div>
 
     <div class="field">
-      <label for="campaign-end">Campaign End</label>
+      <label for="campaign-end" data-i18n="campaignEnd">Campaign End</label>
       <input type="date" id="campaign-end" value="2026-11-04">
     </div>
 
     <div class="field">
-      <label for="total-revenue">Total Revenue</label>
+      <label for="total-revenue" data-i18n="totalRevenue">Total Revenue</label>
       <div class="input-with-prefix">
         <span class="prefix" data-currency-symbol>$</span>
         <input type="number" id="total-revenue" min="0" step="100" value="10000">
@@ -60,7 +60,7 @@
     </div>
 
     <div class="field">
-      <label for="avg-order-value">Avg. Order Value</label>
+      <label for="avg-order-value" data-i18n="avgOrderValue">Avg. Order Value</label>
       <div class="input-with-prefix">
         <span class="prefix" data-currency-symbol>$</span>
         <input type="number" id="avg-order-value" min="1" step="10" value="1000">
@@ -75,7 +75,7 @@
         <div class="stat-card">
           <div class="stat-card-header">
             <span class="stat-icon">📥</span>
-            <span class="stat-title">Prospects</span>
+            <span class="stat-title" data-i18n="prospects">Prospects</span>
             <span class="stat-percent" id="prospects-percent">100%</span>
           </div>
           <div class="stat-value" id="prospects-value">0</div>
@@ -85,7 +85,7 @@
         <div class="stat-card">
           <div class="stat-card-header">
             <span class="stat-icon">👤</span>
-            <span class="stat-title">Leads</span>
+            <span class="stat-title" data-i18n="leads">Leads</span>
             <span class="stat-percent" id="leads-percent">0%</span>
           </div>
           <div class="stat-value" id="leads-value">0</div>
@@ -95,7 +95,7 @@
         <div class="stat-card">
           <div class="stat-card-header">
             <span class="stat-icon">🏆</span>
-            <span class="stat-title">Customers</span>
+            <span class="stat-title" data-i18n="customers">Customers</span>
             <span class="stat-percent" id="customers-percent">0%</span>
           </div>
           <div class="stat-value" id="customers-value">0</div>
@@ -106,13 +106,13 @@
 
     <section class="sliders-panel" id="sliders-panel">
       <div class="slider-group">
-        <label for="lead-response-rate">Lead Response Rate</label>
+        <label for="lead-response-rate" data-i18n="leadResponseRate">Lead Response Rate</label>
         <input type="range" id="lead-response-rate" min="0" max="100" step="0.01" value="40">
         <div class="slider-value" id="lead-response-rate-value">40.00%</div>
       </div>
 
       <div class="slider-group">
-        <label for="prospect-response-rate">Prospect Response Rate</label>
+        <label for="prospect-response-rate" data-i18n="prospectResponseRate">Prospect Response Rate</label>
         <input type="range" id="prospect-response-rate" min="0" max="100" step="0.01" value="20">
         <div class="slider-value" id="prospect-response-rate-value">20.00%</div>
       </div>
@@ -122,6 +122,7 @@
 </div>
 <script src="js/calculations.js"></script>
 <script src="js/chart.js"></script>
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
