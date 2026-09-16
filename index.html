@@ -21,7 +21,51 @@
   </header>
 
   <aside class="sidebar" id="sidebar">
-    <!-- settings controls added in a later change -->
+    <div class="field">
+      <label for="language-select">Language</label>
+      <select id="language-select">
+        <option value="en" selected>🇺🇸 English</option>
+        <option value="bg">🇧🇬 Български</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="de">🇩🇪 Deutsch</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="currency-select">Currency</label>
+      <select id="currency-select">
+        <option value="USD" data-symbol="$" selected>$ US Dollar</option>
+        <option value="EUR" data-symbol="€">€ Euro</option>
+        <option value="BGN" data-symbol="лв">лв Bulgarian Lev</option>
+        <option value="GBP" data-symbol="£">£ British Pound</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="campaign-start">Campaign Start</label>
+      <input type="date" id="campaign-start" value="2026-05-08">
+    </div>
+
+    <div class="field">
+      <label for="campaign-end">Campaign End</label>
+      <input type="date" id="campaign-end" value="2026-11-04">
+    </div>
+
+    <div class="field">
+      <label for="total-revenue">Total Revenue</label>
+      <div class="input-with-prefix">
+        <span class="prefix" data-currency-symbol>$</span>
+        <input type="number" id="total-revenue" min="0" step="100" value="10000">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="avg-order-value">Avg. Order Value</label>
+      <div class="input-with-prefix">
+        <span class="prefix" data-currency-symbol>$</span>
+        <input type="number" id="avg-order-value" min="1" step="10" value="1000">
+      </div>
+    </div>
   </aside>
 
   <main class="content">
