@@ -1,8 +1,4 @@
 (function () {
-  // Replaced by the real slider values once the response-rate sliders are wired in.
-  const DEFAULT_LEAD_RESPONSE_RATE = 40;
-  const DEFAULT_PROSPECT_RESPONSE_RATE = 20;
-
   function round(value) {
     return Math.round(value);
   }
@@ -11,11 +7,18 @@
     return {
       totalRevenue: parseFloat(document.getElementById('total-revenue').value) || 0,
       avgOrderValue: parseFloat(document.getElementById('avg-order-value').value) || 0,
-      leadResponseRate: DEFAULT_LEAD_RESPONSE_RATE,
-      prospectResponseRate: DEFAULT_PROSPECT_RESPONSE_RATE,
+      leadResponseRate: parseFloat(document.getElementById('lead-response-rate').value) || 0,
+      prospectResponseRate: parseFloat(document.getElementById('prospect-response-rate').value) || 0,
       campaignStart: document.getElementById('campaign-start').value,
       campaignEnd: document.getElementById('campaign-end').value,
     };
+  }
+
+  function updateSliderLabels() {
+    ['lead-response-rate', 'prospect-response-rate'].forEach((id) => {
+      const value = parseFloat(document.getElementById(id).value) || 0;
+      document.getElementById(`${id}-value`).textContent = `${value.toFixed(2)}%`;
+    });
   }
 
   function setCard(name, value, percent) {
@@ -35,6 +38,7 @@
   }
 
   function recalculate() {
+    updateSliderLabels();
     const inputs = getInputs();
     const result = LeadPredictor.calculateFunnel(inputs);
     updateStatCards(result);
@@ -42,7 +46,14 @@
   }
 
   function init() {
-    ['total-revenue', 'avg-order-value', 'campaign-start', 'campaign-end'].forEach((id) => {
+    [
+      'total-revenue',
+      'avg-order-value',
+      'campaign-start',
+      'campaign-end',
+      'lead-response-rate',
+      'prospect-response-rate',
+    ].forEach((id) => {
       document.getElementById(id).addEventListener('input', recalculate);
     });
     recalculate();
