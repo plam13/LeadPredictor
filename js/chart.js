@@ -5,10 +5,23 @@ const LeadPredictorChart = (function () {
     return Math.round(value);
   }
 
-  function niceMax(value) {
+  // Rounds a raw axis step up to a "nice" 1/2/5-times-a-power-of-10 number,
+  // so tick labels read like 20/40/60 instead of 23/47/70.
+  function niceStep(rawStep) {
+    const exponent = Math.floor(Math.log10(rawStep));
+    const fraction = rawStep / Math.pow(10, exponent);
+    let niceFraction;
+    if (fraction < 1.5) niceFraction = 1;
+    else if (fraction < 3) niceFraction = 2;
+    else if (fraction < 7) niceFraction = 5;
+    else niceFraction = 10;
+    return niceFraction * Math.pow(10, exponent);
+  }
+
+  function niceMax(value, tickCount) {
     if (value <= 0) return 20;
-    const step = 20;
-    return Math.ceil(value / step) * step;
+    const step = niceStep(value / tickCount);
+    return { axisMax: Math.ceil(value / step) * step, step };
   }
 
   function renderChart(container, result) {
@@ -16,7 +29,8 @@ const LeadPredictorChart = (function () {
 
     const { monthsCount, monthly } = result;
     const lastProspects = monthly.prospects[monthly.prospects.length - 1] || 0;
-    const maxValue = niceMax(lastProspects);
+    const axisTickCount = 6;
+    const { axisMax: maxValue, step: axisStep } = niceMax(lastProspects, axisTickCount);
 
     const chart = document.createElement('div');
     chart.className = 'chart';
@@ -79,9 +93,7 @@ const LeadPredictorChart = (function () {
 
     const axis = document.createElement('div');
     axis.className = 'chart-axis';
-    const axisSteps = 6;
-    for (let s = 0; s <= axisSteps; s++) {
-      const value = Math.round((maxValue / axisSteps) * s);
+    for (let value = 0; value <= maxValue; value += axisStep) {
       const tick = document.createElement('span');
       tick.textContent = `${value} people`;
       axis.appendChild(tick);
