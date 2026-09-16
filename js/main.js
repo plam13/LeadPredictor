@@ -58,8 +58,9 @@
     });
 
     const languageSelect = document.getElementById('language-select');
+    LeadPredictorLanguageSelect.build(languageSelect, LeadPredictorI18n.languages, 'en');
     languageSelect.addEventListener('change', () => {
-      LeadPredictorI18n.applyLanguage(languageSelect.value);
+      LeadPredictorI18n.applyLanguage(languageSelect.dataset.value);
     });
 
     const currencySelect = document.getElementById('currency-select');
@@ -67,7 +68,7 @@
       LeadPredictorI18n.applyCurrency(currencySelect.value);
     });
 
-    LeadPredictorI18n.applyLanguage(languageSelect.value);
+    LeadPredictorI18n.applyLanguage(languageSelect.dataset.value);
     LeadPredictorI18n.applyCurrency(currencySelect.value);
     recalculate();
   }

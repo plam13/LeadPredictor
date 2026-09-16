@@ -29,7 +29,7 @@ body {
   display: grid;
   grid-template-columns: 280px 1fr;
   grid-template-rows: auto 1fr;
-  gap: 20px;
+  gap: 24px;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -59,7 +59,7 @@ body {
 }
 
 .logo-text {
-  font-size: 26px;
+  font-size: 33px;
 }
 
 .logo-text-light {
@@ -87,7 +87,7 @@ body {
   grid-row: 1 / 3;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .chart-panel {
@@ -118,7 +118,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
 }
 
 .placeholder {
@@ -144,7 +144,7 @@ body {
 .field input[type="date"],
 .field input[type="number"] {
   width: 100%;
-  padding: 10px 12px;
+  padding: 12px 12px;
   background: var(--bg);
   border: 1px solid var(--panel-border);
   border-radius: 8px;
@@ -168,6 +168,86 @@ body {
 .field input:focus {
   outline: none;
   border-color: var(--text-muted);
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px;
+  background: var(--bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.custom-select-trigger:focus {
+  outline: none;
+  border-color: var(--text-muted);
+}
+
+.custom-select-label {
+  flex: 1;
+}
+
+.custom-select-arrow {
+  display: inline-flex;
+  color: var(--text-muted);
+}
+
+.flag-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.flag-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-select-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: var(--bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  z-index: 20;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.custom-select-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.custom-select-option:hover,
+.custom-select-option[aria-selected="true"] {
+  background: var(--panel);
 }
 
 .field input[type="date"]::-webkit-calendar-picker-indicator {
@@ -241,8 +321,8 @@ body {
 }
 
 .progress-track {
-  height: 6px;
-  border-radius: 3px;
+  height: 10px;
+  border-radius: 4px;
   background: var(--track);
   overflow: hidden;
 }
@@ -285,7 +365,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   cursor: default;
 }
 
@@ -346,8 +426,8 @@ input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 6px;
-  border-radius: 3px;
+  height: 10px;
+  border-radius: 4px;
   background: var(--track);
   outline: none;
 }
