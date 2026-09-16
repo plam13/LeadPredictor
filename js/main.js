@@ -56,6 +56,19 @@
     ].forEach((id) => {
       document.getElementById(id).addEventListener('input', recalculate);
     });
+
+    const languageSelect = document.getElementById('language-select');
+    languageSelect.addEventListener('change', () => {
+      LeadPredictorI18n.applyLanguage(languageSelect.value);
+    });
+
+    const currencySelect = document.getElementById('currency-select');
+    currencySelect.addEventListener('change', () => {
+      LeadPredictorI18n.applyCurrency(currencySelect.value);
+    });
+
+    LeadPredictorI18n.applyLanguage(languageSelect.value);
+    LeadPredictorI18n.applyCurrency(currencySelect.value);
     recalculate();
   }
 
