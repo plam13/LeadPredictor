@@ -105,7 +105,17 @@
     </section>
 
     <section class="sliders-panel" id="sliders-panel">
-      <!-- response rate sliders added in a later change -->
+      <div class="slider-group">
+        <label for="lead-response-rate">Lead Response Rate</label>
+        <input type="range" id="lead-response-rate" min="0" max="100" step="0.01" value="40">
+        <div class="slider-value" id="lead-response-rate-value">40.00%</div>
+      </div>
+
+      <div class="slider-group">
+        <label for="prospect-response-rate">Prospect Response Rate</label>
+        <input type="range" id="prospect-response-rate" min="0" max="100" step="0.01" value="20">
+        <div class="slider-value" id="prospect-response-rate-value">20.00%</div>
+      </div>
     </section>
   </main>
 
