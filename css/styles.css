@@ -118,6 +118,63 @@ body {
   color: var(--text-muted);
 }
 
+.field {
+  margin-bottom: 20px;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.field select,
+.field input[type="date"],
+.field input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.field select:focus,
+.field input:focus {
+  outline: none;
+  border-color: var(--text-muted);
+}
+
+.input-with-prefix {
+  display: flex;
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 0 12px;
+}
+
+.input-with-prefix .prefix {
+  color: var(--text-muted);
+}
+
+.input-with-prefix input {
+  border: none;
+  background: transparent;
+  padding: 10px 8px;
+}
+
+.input-with-prefix input:focus {
+  outline: none;
+}
+
 @media (max-width: 800px) {
   .app {
     grid-template-columns: 1fr;
