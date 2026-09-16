@@ -38,6 +38,7 @@
     const inputs = getInputs();
     const result = LeadPredictor.calculateFunnel(inputs);
     updateStatCards(result);
+    LeadPredictorChart.renderChart(document.getElementById('chart-container'), result);
   }
 
   function init() {

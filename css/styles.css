@@ -92,9 +92,6 @@ body {
 .chart-container {
   flex: 2;
   min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .stat-cards {
@@ -222,6 +219,79 @@ body {
   background: var(--bar-dark);
   border-radius: 3px;
   transition: width 0.2s ease;
+}
+
+.chart {
+  position: relative;
+  width: 100%;
+}
+
+.chart-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  cursor: default;
+}
+
+.chart-row-label {
+  width: 16px;
+  text-align: right;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.chart-bar-track {
+  position: relative;
+  flex: 1;
+  height: 28px;
+}
+
+.chart-bar {
+  position: absolute;
+  left: 0;
+  border-radius: 4px;
+  transition: width 0.2s ease;
+}
+
+.chart-bar-prospects {
+  top: 0;
+  height: 28px;
+  background: var(--bar-light);
+}
+
+.chart-bar-leads {
+  top: 6px;
+  height: 16px;
+  background: var(--bar-mid);
+}
+
+.chart-bar-customers {
+  top: 10px;
+  height: 8px;
+  background: var(--bar-dark);
+}
+
+.chart-axis {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 28px;
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.chart-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 10;
 }
 
 @media (max-width: 800px) {
