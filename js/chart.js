@@ -35,8 +35,28 @@ const LeadPredictorChart = (function () {
     const chart = document.createElement('div');
     chart.className = 'chart';
 
+    const body = document.createElement('div');
+    body.className = 'chart-body';
+
+    const yTitle = document.createElement('div');
+    yTitle.className = 'chart-y-title';
+    yTitle.textContent = 'Months';
+
+    const plot = document.createElement('div');
+    plot.className = 'chart-plot';
+
     const rows = document.createElement('div');
     rows.className = 'chart-rows';
+
+    const grid = document.createElement('div');
+    grid.className = 'chart-grid';
+    for (let value = axisStep; value <= maxValue; value += axisStep) {
+      const line = document.createElement('span');
+      line.className = 'chart-grid-line';
+      line.style.left = `${(value / maxValue) * 100}%`;
+      grid.appendChild(line);
+    }
+    rows.appendChild(grid);
 
     const tooltip = document.createElement('div');
     tooltip.className = 'chart-tooltip';
@@ -99,7 +119,9 @@ const LeadPredictorChart = (function () {
       axis.appendChild(tick);
     }
 
-    chart.append(rows, axis, tooltip);
+    plot.append(rows, axis);
+    body.append(yTitle, plot);
+    chart.append(body, tooltip);
     container.appendChild(chart);
   }
 

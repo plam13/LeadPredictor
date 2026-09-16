@@ -62,12 +62,12 @@ body {
 }
 
 .logo-text-light {
-  font-weight: 400;
+  font-weight: 700;
   color: var(--text-muted);
 }
 
 .logo-text-bold {
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text);
 }
 
@@ -100,7 +100,7 @@ body {
 
 .chart-container {
   flex: 2;
-  min-height: 320px;
+  min-height: 380px;
 }
 
 .stat-cards {
@@ -259,11 +259,55 @@ body {
   width: 100%;
 }
 
+.chart-body {
+  display: flex;
+  gap: 6px;
+}
+
+.chart-y-title {
+  flex-shrink: 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: var(--text-muted);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-plot {
+  flex: 1;
+  min-width: 0;
+}
+
+.chart-rows {
+  position: relative;
+}
+
+.chart-grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 28px;
+  right: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.chart-grid-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px dashed var(--panel-border);
+}
+
 .chart-row {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   cursor: default;
 }
 
@@ -277,31 +321,31 @@ body {
 .chart-bar-track {
   position: relative;
   flex: 1;
-  height: 28px;
+  height: 40px;
 }
 
 .chart-bar {
   position: absolute;
   left: 0;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   transition: width 0.2s ease;
 }
 
 .chart-bar-prospects {
   top: 0;
-  height: 28px;
+  height: 40px;
   background: var(--bar-light);
 }
 
 .chart-bar-leads {
-  top: 6px;
-  height: 16px;
+  top: 9px;
+  height: 22px;
   background: var(--bar-mid);
 }
 
 .chart-bar-customers {
-  top: 10px;
-  height: 8px;
+  top: 14px;
+  height: 12px;
   background: var(--bar-dark);
 }
 
@@ -309,7 +353,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-left: 28px;
-  margin-top: 8px;
+  margin-top: 12px;
   color: var(--text-muted);
   font-size: 11px;
 }
@@ -361,7 +405,7 @@ input[type="range"]::-moz-range-thumb {
   position: absolute;
   background: rgba(0, 0, 0, 0.85);
   color: #fff;
-  padding: 8px 10px;
+  padding: 10px 12px;
   border-radius: 6px;
   font-size: 12px;
   line-height: 1.5;
