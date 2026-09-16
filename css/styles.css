@@ -59,7 +59,16 @@ body {
 
 .logo-text {
   font-size: 22px;
+}
+
+.logo-text-light {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.logo-text-bold {
   font-weight: 700;
+  color: var(--text);
 }
 
 .sidebar {
@@ -98,7 +107,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .sliders-panel {
