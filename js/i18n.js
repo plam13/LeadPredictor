@@ -64,6 +64,49 @@ const LeadPredictorI18n = (function () {
     GBP: '£',
   };
 
+  // Simple, geometrically-accurate flag SVGs (stripes/blocks only) so the
+  // language dropdown doesn't rely on emoji flags, which Windows renders as
+  // plain two-letter codes instead of pictures.
+  const flagSvgs = {
+    us:
+      '<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">' +
+      '<rect width="20" height="14" fill="#fff"/>' +
+      '<rect y="0" width="20" height="2" fill="#B22234"/>' +
+      '<rect y="4" width="20" height="2" fill="#B22234"/>' +
+      '<rect y="8" width="20" height="2" fill="#B22234"/>' +
+      '<rect y="12" width="20" height="2" fill="#B22234"/>' +
+      '<rect width="9" height="8" fill="#3C3B6E"/>' +
+      '</svg>',
+    bg:
+      '<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">' +
+      '<rect width="20" height="4.67" fill="#fff"/>' +
+      '<rect y="4.67" width="20" height="4.67" fill="#00966E"/>' +
+      '<rect y="9.33" width="20" height="4.67" fill="#D62612"/>' +
+      '</svg>',
+    es:
+      '<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">' +
+      '<rect width="20" height="14" fill="#AA151B"/>' +
+      '<rect y="3.5" width="20" height="7" fill="#F1BF00"/>' +
+      '</svg>',
+    de:
+      '<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">' +
+      '<rect width="20" height="4.67" fill="#000"/>' +
+      '<rect y="4.67" width="20" height="4.67" fill="#DD0000"/>' +
+      '<rect y="9.33" width="20" height="4.67" fill="#FFCE00"/>' +
+      '</svg>',
+  };
+
+  const languages = [
+    { code: 'en', label: 'English', flag: 'us' },
+    { code: 'bg', label: 'Български', flag: 'bg' },
+    { code: 'es', label: 'Español', flag: 'es' },
+    { code: 'de', label: 'Deutsch', flag: 'de' },
+  ];
+
+  function flagSvg(flag) {
+    return flagSvgs[flag] || '';
+  }
+
   function applyLanguage(lang) {
     const dict = dictionaries[lang] || dictionaries.en;
     document.querySelectorAll('[data-i18n]').forEach((el) => {
@@ -79,5 +122,5 @@ const LeadPredictorI18n = (function () {
     });
   }
 
-  return { applyLanguage, applyCurrency, currencySymbols };
+  return { applyLanguage, applyCurrency, currencySymbols, languages, flagSvg };
 })();

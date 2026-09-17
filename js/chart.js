@@ -35,6 +35,16 @@ const LeadPredictorChart = (function () {
     const chart = document.createElement('div');
     chart.className = 'chart';
 
+    const body = document.createElement('div');
+    body.className = 'chart-body';
+
+    const yTitle = document.createElement('div');
+    yTitle.className = 'chart-y-title';
+    yTitle.textContent = 'Months';
+
+    const plot = document.createElement('div');
+    plot.className = 'chart-plot';
+
     const rows = document.createElement('div');
     rows.className = 'chart-rows';
 
@@ -99,7 +109,9 @@ const LeadPredictorChart = (function () {
       axis.appendChild(tick);
     }
 
-    chart.append(rows, axis, tooltip);
+    plot.append(rows, axis);
+    body.append(yTitle, plot);
+    chart.append(body, tooltip);
     container.appendChild(chart);
   }
 
