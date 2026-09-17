@@ -324,6 +324,7 @@ body {
   height: 28px;
   border-radius: 6px;
   background: var(--panel);
+  background: #1b23383b;
   font-size: 16px;
 }
 
@@ -331,13 +332,15 @@ body {
   flex: 1;
   font-weight: 600;
   color: var(--panel);
+  font-size: 18px;
 }
 
 .stat-percent {
-  color: var(--panel);
-  font-size: 13px;
-  font-weight: 700;
-  opacity: 0.8;
+  /* color: var(--panel); */
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 1px 4px rgba(13, 21, 38, 0.6);
 }
 
 .stat-value {
