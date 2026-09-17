@@ -1,10 +1,11 @@
 # LeadPredictor
 
-Статично уеб приложение (само HTML, CSS и vanilla JavaScript — без frameworks и build tools), което изчислява колко контакти (prospects), потенциални клиенти (leads) и клиенти (customers) са нужни за постигане на зададен оборот, и разпределя прогнозата по месеци на кампанията.
+A static web app (plain HTML, CSS and vanilla JavaScript — no frameworks, no build tools) that calculates how many prospects, leads and customers are needed to hit a target revenue, and spreads that forecast across the months of the campaign.
 
 ![Expected result](Expected-result.png)
 
-## Формули
+
+## Formulas
 
 ```
 Customers = Total Revenue / Avg. Order Value
@@ -12,27 +13,29 @@ Leads     = Customers * 100 / Lead Response Rate%
 Prospects = Leads * 100 / Prospect Response Rate%
 ```
 
-Месечната графика разпределя всяка от трите стойности линейно кумулативно между началото и края на кампанията:
+The monthly chart distributes each of the three values as a linear cumulative ramp between the campaign's start and end:
 
 ```
-value(month i) = total * i / N   // i = 1..N, N = брой месеци между Campaign Start и Campaign End
+value(month i) = total * i / N   // i = 1..N, N = number of months between Campaign Start and Campaign End
 ```
 
-## Функционалност
+## Features
 
-- Живо преизчисление на Prospects/Leads/Customers при промяна на Total Revenue, Avg. Order Value, датите на кампанията или двата slider-а (Lead/Prospect Response Rate)
-- Месечна bar графика с hover tooltip, показващ точните стойности за месеца
-- Смяна на език на етикетите (EN/BG/ES/DE) и на валутния символ, без презареждане на страницата
+- Live recalculation of Prospects/Leads/Customers whenever Total Revenue, Avg. Order Value, the campaign dates, or either slider (Lead/Prospect Response Rate) changes
+- Monthly bar chart with a hover tooltip showing the exact values for that month
+- Language switching for labels (EN/BG/ES/DE) and currency symbol switching, with no page reload
 
-## Стартиране
 
-Отворете `index.html` директно в браузър — не изисква сървър или зависимости.
+## Running it
 
-## Структура
+Open `index.html` directly in a browser — no server or dependencies required.
 
-- `index.html` — разметка
-- `css/styles.css` — стилове (тъмна тема)
-- `js/calculations.js` — чисти функции за изчисленията
-- `js/chart.js` — рендиране на месечната графика
-- `js/i18n.js` — превод на етикети (EN/BG/ES/DE) и валутни символи
-- `js/main.js` — свързва UI контролите с изчисленията
+
+## Structure
+
+- `index.html` — markup
+- `css/styles.css` — styles (dark theme)
+- `js/calculations.js` — pure functions for the calculations
+- `js/chart.js` — renders the monthly chart
+- `js/i18n.js` — label translations (EN/BG/ES/DE) and currency symbols
+- `js/main.js` — wires the UI controls to the calculations
