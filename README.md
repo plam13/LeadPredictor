@@ -2,6 +2,8 @@
 
 Статично уеб приложение (само HTML, CSS и vanilla JavaScript — без frameworks и build tools), което изчислява колко контакти (prospects), потенциални клиенти (leads) и клиенти (customers) са нужни за постигане на зададен оборот, и разпределя прогнозата по месеци на кампанията.
 
+![Expected result](Expected-result.png)
+
 ## Формули
 
 ```
