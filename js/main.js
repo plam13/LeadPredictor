@@ -43,12 +43,9 @@
     const result = LeadPredictor.calculateFunnel(inputs);
     updateStatCards(result);
     LeadPredictorChart.renderChart(document.getElementById('chart-container'), result);
-    LeadPredictorPersistence.save();
   }
 
   function init() {
-    LeadPredictorPersistence.load();
-
     [
       'total-revenue',
       'avg-order-value',
