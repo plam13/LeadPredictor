@@ -96,7 +96,7 @@ body {
   border-radius: var(--radius);
   padding: 20px;
   display: flex;
-  gap: 20px;
+  gap: 22px;
 }
 
 .chart-container {
@@ -297,13 +297,15 @@ body {
 }
 
 .stat-card--customers {
-  background: var(--bar-dark);
+  background: #d2d6e5;
   border-color: var(--bar-dark);
   color: var(--bg);
 }
 
 .stat-card--customers .stat-percent {
-  color: rgba(13, 21, 38, 0.55);
+  /* color: rgba(13, 21, 38, 0.65); */
+  color: white;
+  text-shadow: 2px 2px 10px #6f7792bd;
 }
 
 .stat-card-header {
@@ -320,7 +322,8 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  background: var(--panel);
+  /* background: var(--panel); */
+  background: #1b233836;
   font-size: 16px;
 }
 
@@ -330,14 +333,20 @@ body {
 }
 
 .stat-percent {
-  color: var(--text-muted);
+  /* color: var(--text-muted); */
+  color: white;
   font-size: 13px;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px #6f7792bd;
 }
 
 .stat-value {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 10px;
+  color: white;
+  text-shadow: 2px 2px 5px #6f779275;
 }
 
 .progress-track {
@@ -379,6 +388,7 @@ body {
 .chart-plot {
   flex: 1;
   min-width: 0;
+  padding-top: 12px;
 }
 
 .chart-row {
@@ -423,8 +433,9 @@ body {
 
 .chart-bar-customers {
   top: 11px;
-  height: 28px;
-  background: var(--bar-dark);
+  height: 27px;
+  background: #e5e5e7;
+  
 }
 
 .chart-axis {
