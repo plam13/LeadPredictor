@@ -291,12 +291,13 @@ body {
   padding: 16px;
 }
 
-/* Dark-to-light range, evenly interpolated: Prospects (top) darkest,
-   Customers (bottom) lightest - titles/percent stay dark on all three,
-   only the big value number turns white with a shadow for legibility. */
 .stat-card--prospects {
-  background: #4f5972;
+  background: #646f8a;
   border-color: #4f5972;
+}
+
+.stat-card--prospects .progress-track {
+  opacity: .9;
 }
 
 .stat-card--leads {
@@ -309,11 +310,15 @@ body {
   border-color: #ced2dd;
 }
 
+.stat-card--customers .stat-title {
+  opacity: .8;
+}
+
 .stat-card-header {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 
 .stat-icon {
@@ -332,21 +337,21 @@ body {
   flex: 1;
   font-weight: 600;
   color: var(--panel);
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .stat-percent {
   /* color: var(--panel); */
   color: white;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 600;
   text-shadow: 0 1px 4px rgba(13, 21, 38, 0.6);
 }
 
 .stat-value {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 5px;
   color: #fff;
   text-shadow: 0 1px 4px rgba(13, 21, 38, 0.6);
 }
@@ -385,6 +390,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  letter-spacing: 1px;
 }
 
 .chart-plot {
