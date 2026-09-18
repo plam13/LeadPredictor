@@ -60,7 +60,6 @@ const LeadPredictorI18n = (function () {
   const currencySymbols = {
     USD: '$',
     EUR: '€',
-    BGN: 'лв',
     GBP: '£',
   };
 

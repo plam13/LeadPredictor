@@ -297,7 +297,7 @@ body {
 }
 
 .stat-card--prospects .progress-track {
-  opacity: .9;
+  opacity: .85;
 }
 
 .stat-card--leads {
@@ -317,7 +317,7 @@ body {
 .stat-card-header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   /* margin-bottom: 8px; */
 }
 
@@ -336,6 +336,7 @@ body {
 .stat-title {
   flex: 1;
   font-weight: 600;
+  line-height: 1;
   color: var(--panel);
   font-size: 20px;
 }
