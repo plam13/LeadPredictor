@@ -518,9 +518,8 @@ input[type="range"]::-moz-range-thumb {
     grid-template-rows: none;
     padding: 20px;
   }
-  .logo {
-    padding: unset;
-  }
+  .logo {padding: unset;}
+
   .logo-bar,
   .sidebar,
   .content {
@@ -536,12 +535,13 @@ input[type="range"]::-moz-range-thumb {
 
   .field {margin-bottom: 0;}
 
-  .field:nth-last-child(-n+2) {
-    margin-bottom: 10px;}
+  .field:nth-last-child(-n+2) {margin-bottom: 10px;}
 
-  .chart-panel {
-    flex-direction: column;
-  }
+  .chart-panel {flex-direction: column;}
+
+  .chart-container {margin-left: -10px;}
+
+  .chart-body {gap:0;}
 
   .chart-axis {
     flex-wrap: wrap;
